@@ -1,0 +1,40 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--cursor-border);
+  border-radius: 50%;
+  background:
+    var(--cursor-fill);
+  box-shadow: var(--cursor-shadow);
+  pointer-events: none;
+  z-index: 200;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition:
+    opacity 0.25s ease,
+    width 0.25s ease,
+    height 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.active {
+  width: 54px;
+  height: 54px;
+  border-color: var(--cursor-active-border);
+  background:
+    var(--cursor-active-fill);
+}
+
+@media (hover: none) {
+  .cursor {
+    display: none;
+  }
+}

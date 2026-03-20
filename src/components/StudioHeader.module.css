@@ -1,0 +1,137 @@
+.header {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(calc(100% - 32px), 1240px);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 20px;
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  background: var(--header-bg);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-soft);
+  z-index: 100;
+}
+
+.brand {
+  display: grid;
+  gap: 2px;
+  color: var(--text-primary);
+}
+
+.brand span {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+}
+
+.brand small {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.62rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+.nav a {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: var(--text-primary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.themeToggle,
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border-strong);
+  color: var(--text-primary);
+  font-size: 0.92rem;
+}
+
+.themeToggle {
+  gap: 8px;
+  min-height: 46px;
+  background: var(--surface-plain);
+  cursor: pointer;
+}
+
+.themeToggle small {
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.cta {
+  background: var(--header-cta-bg);
+  border-color: var(--header-cta-border);
+}
+
+.themeToggle:hover,
+.themeToggle:focus-visible,
+.cta:hover,
+.cta:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--accent-border);
+  background: var(--surface-accent-soft);
+}
+
+@media (max-width: 960px) {
+  .header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .nav {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    top: 12px;
+    width: calc(100% - 20px);
+    padding: 12px 14px;
+  }
+
+  .brand span {
+    letter-spacing: 0.22em;
+    font-size: 0.85rem;
+  }
+
+  .actions {
+    gap: 10px;
+  }
+
+  .themeToggle,
+  .cta {
+    padding: 10px 12px;
+    font-size: 0.82rem;
+  }
+
+  .themeToggle small {
+    display: none;
+  }
+}
