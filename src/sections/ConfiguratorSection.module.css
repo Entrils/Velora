@@ -1,0 +1,257 @@
+.section {
+  padding: 140px 0 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.stage {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+  border-radius: 36px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background:
+    var(--panel-strong);
+  box-shadow: var(--shadow-strong);
+}
+
+.glow {
+  position: absolute;
+  inset: -10% auto auto 12%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--hero-orb-primary), transparent 68%);
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+.stageTop,
+.stageFooter {
+  position: relative;
+  z-index: 1;
+}
+
+.stageTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 20px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border-strong);
+  background: var(--surface-plain-strong);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+}
+
+.liveNote {
+  display: grid;
+  gap: 4px;
+  max-width: 280px;
+  text-align: right;
+}
+
+.liveNote strong {
+  font-size: 1rem;
+}
+
+.liveNote span,
+.groupLabel,
+.statusCard span,
+.tipCard span,
+.summaryCard span {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.canvasShell {
+  position: relative;
+  z-index: 1;
+  min-height: 620px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(180deg, var(--surface-plain-strong), var(--surface-plain));
+}
+
+.canvasFallback {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 32px;
+  background:
+    radial-gradient(circle at top, var(--hero-orb-primary), transparent 42%),
+    var(--panel-strong);
+  text-align: center;
+}
+
+.canvasFallback span {
+  color: var(--text-secondary);
+  max-width: 34ch;
+}
+
+.stageFooter {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 14px;
+}
+
+.statusCard,
+.tipCard,
+.summaryCard,
+.controlGroup {
+  padding: 18px;
+  border-radius: 24px;
+  background:
+    var(--panel-soft);
+  border: 1px solid var(--glass-border);
+}
+
+.statusCard {
+  display: grid;
+  gap: 12px;
+}
+
+.statusList {
+  display: grid;
+  gap: 8px;
+}
+
+.statusList p,
+.tipCard p,
+.summaryCard p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.tipCard {
+  display: grid;
+  gap: 8px;
+}
+
+.tipCard strong,
+.summaryCard strong {
+  font-size: 1.1rem;
+}
+
+.sidebar {
+  display: grid;
+  gap: 16px;
+}
+
+.controlGroup {
+  display: grid;
+  gap: 14px;
+}
+
+.groupLabel {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.controlGrid,
+.inlineGrid {
+  display: grid;
+  gap: 10px;
+}
+
+.inlineGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.controlButton {
+  display: grid;
+  gap: 6px;
+  min-height: 72px;
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  background: var(--surface-plain);
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.controlButton small {
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.controlButton:hover,
+.activeControl {
+  transform: translateY(-3px);
+  border-color: var(--accent-border);
+  background: var(--surface-accent);
+}
+
+.summaryCard {
+  display: grid;
+  gap: 10px;
+}
+
+@media (max-width: 1120px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .stageTop {
+    flex-direction: column;
+  }
+
+  .liveNote {
+    text-align: left;
+  }
+
+  .stageFooter,
+  .inlineGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding-top: 112px;
+  }
+
+  .stage,
+  .controlGroup,
+  .summaryCard,
+  .statusCard,
+  .tipCard {
+    padding: 16px;
+  }
+
+  .canvasShell {
+    min-height: 440px;
+  }
+}
