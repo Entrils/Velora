@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
 
 *,
 *::before,
@@ -24,8 +24,29 @@ body {
     color 0.3s ease;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, transparent 0, transparent calc(50% - 620px), var(--guide-line) calc(50% - 620px), var(--guide-line) calc(50% - 619px), transparent calc(50% - 619px), transparent calc(50% + 619px), var(--guide-line) calc(50% + 619px), var(--guide-line) calc(50% + 620px), transparent calc(50% + 620px));
+}
+
 body.modalOpen {
   overflow: hidden;
+}
+
+body,
+button,
+input,
+textarea {
+  letter-spacing: 0;
+}
+
+::selection {
+  background: var(--selection-bg);
 }
 
 a {
@@ -44,11 +65,12 @@ a,
 input,
 textarea {
   transition:
-    color 0.25s ease,
-    background-color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s ease,
-    opacity 0.25s ease;
+    color 0.22s ease,
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s ease,
+    opacity 0.22s ease,
+    box-shadow 0.22s ease;
 }
 
 img {
@@ -60,12 +82,14 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-weight: 600;
+  margin: 0;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.04em;
 }
 
-::selection {
-  background: var(--selection-bg);
+p {
+  margin: 0;
 }
 
 #root {

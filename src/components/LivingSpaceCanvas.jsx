@@ -34,10 +34,10 @@ function LivingSpaceCanvas({ styleMode, materialMode, lightMode, cameraMode }) {
     const x = (event.clientX - bounds.left) / bounds.width - 0.5;
     const y = (event.clientY - bounds.top) / bounds.height - 0.5;
 
-    root.style.setProperty("--pointer-pan", `${x * 8}deg`);
-    root.style.setProperty("--pointer-tilt", `${y * -6}deg`);
-    root.style.setProperty("--pointer-shift-x", `${x * 18}px`);
-    root.style.setProperty("--pointer-shift-y", `${y * 14}px`);
+    root.style.setProperty("--pointer-pan", `${x * 5}deg`);
+    root.style.setProperty("--pointer-tilt", `${y * -4}deg`);
+    root.style.setProperty("--pointer-shift-x", `${x * 10}px`);
+    root.style.setProperty("--pointer-shift-y", `${y * 8}px`);
   };
 
   const handlePointerLeave = () => {
@@ -61,6 +61,7 @@ function LivingSpaceCanvas({ styleMode, materialMode, lightMode, cameraMode }) {
       onPointerLeave={handlePointerLeave}
     >
       <div className={styles.atmosphere} />
+      <div className={styles.sceneFrame} />
       <div className={styles.room}>
         <div className={styles.backWall}>
           <div className={styles.stripLight} />
@@ -83,7 +84,10 @@ function LivingSpaceCanvas({ styleMode, materialMode, lightMode, cameraMode }) {
         <div className={styles.consoleTower} />
         <div className={styles.floorLampStem} />
         <div className={styles.floorLampHead} />
-        <div className={styles.floorLampGlow} />
+      </div>
+      <div className={styles.legend}>
+        <span>Сцена</span>
+        <strong>Жилая зона</strong>
       </div>
     </div>
   );

@@ -15,8 +15,7 @@
   min-height: 300px;
   padding: 28px;
   border-radius: 30px;
-  background:
-    var(--panel-soft);
+  background: var(--panel-soft);
   border: 1px solid var(--glass-border);
   transition:
     transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
@@ -38,8 +37,7 @@
 .card:focus-within {
   transform: translateY(-6px);
   border-color: var(--accent-border);
-  background:
-    var(--surface-accent-soft);
+  background: var(--surface-accent-soft);
 }
 
 @media (max-width: 1040px) {

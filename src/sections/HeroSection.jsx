@@ -1,6 +1,9 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import { projects } from "../assets/siteContent";
 import styles from "./HeroSection.module.css";
+
+const featuredProject = projects[0];
 
 function HeroSection() {
   const sectionRef = useRef(null);
@@ -12,43 +15,25 @@ function HeroSection() {
       timeline
         .fromTo(
           `.${styles.eyebrow}`,
-          { y: 28, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.7 }
+          { y: 24, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.65 }
         )
         .fromTo(
           `.${styles.title} span`,
-          { yPercent: 120, opacity: 0 },
-          { yPercent: 0, opacity: 1, duration: 1, stagger: 0.08 },
-          "-=0.35"
+          { yPercent: 110, opacity: 0 },
+          { yPercent: 0, opacity: 1, duration: 0.85, stagger: 0.08 },
+          "-=0.25"
         )
         .fromTo(
-          `.${styles.lead}, .${styles.actions}, .${styles.metrics} article, .${styles.frame}`,
-          { y: 36, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.9, stagger: 0.1 },
-          "-=0.55"
+          `.${styles.lead}, .${styles.actions}, .${styles.badges} li, .${styles.visual}`,
+          { y: 24, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.08 },
+          "-=0.35"
         );
 
-      gsap.to(`.${styles.orbPrimary}`, {
-        y: -26,
-        x: 18,
-        duration: 6.4,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut"
-      });
-
-      gsap.to(`.${styles.orbSecondary}`, {
-        y: 24,
-        x: -24,
-        duration: 7,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut"
-      });
-
-      gsap.to(`.${styles.floatingCard}`, {
-        y: -18,
-        duration: 4.8,
+      gsap.to(`.${styles.visualCard}`, {
+        y: -5,
+        duration: 6,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut"
@@ -63,59 +48,65 @@ function HeroSection() {
       <div className={styles.background}>
         <div className={styles.orbPrimary} />
         <div className={styles.orbSecondary} />
-        <div className={styles.grid} />
       </div>
       <div className={`container ${styles.layout}`}>
         <div className={styles.copy}>
-          <p className={styles.eyebrow}>Интерьеры для квартир и частных резиденций</p>
+          <p className={styles.eyebrow}>Дизайн-проект квартиры под ключ</p>
           <h1 className={styles.title}>
-            <span>Делаем интерьер,</span>
-            <span>в котором легко жить</span>
-            <span>и приятно возвращаться.</span>
+            <span>Создаём интерьеры,</span>
+            <span>в которых красиво</span>
+            <span>и удобно жить.</span>
           </h1>
           <p className={styles.lead}>
-            VELORA проектирует частные интерьеры без лишнего шума: с ясной
-            планировкой, спокойным светом и материалами, которые хорошо живут во
-            времени.
+            VELORA помогает пройти путь от первой идеи до готовой квартиры.
+            Мы продумываем планировку, материалы, свет и комплектацию,
+            чтобы интерьер был не только эффектным, но и удобным каждый день.
           </p>
           <div className={styles.actions}>
-            <a href="#projects" className={styles.primaryButton}>
-              Смотреть проекты
+            <a href="#contact" className={styles.primaryButton}>
+              Рассчитать стоимость
             </a>
-            <a href="#contact" className={styles.secondaryButton}>
-              Оставить заявку
+            <a href="#projects" className={styles.secondaryButton}>
+              Посмотреть проекты
             </a>
           </div>
-          <div className={styles.metrics}>
-            <article>
-              <strong>148</strong>
-              <span>реализованных интерьеров</span>
-            </article>
-            <article>
-              <strong>12 лет</strong>
-              <span>частной практики и авторского сопровождения</span>
-            </article>
-            <article>
-              <strong>Полный цикл</strong>
-              <span>от планировки до подбора мебели и света</span>
-            </article>
-          </div>
+          <ul className={styles.badges}>
+            <li>
+              <strong>от 55 дней</strong>
+              <span>на разработку проекта</span>
+            </li>
+            <li>
+              <strong>148 интерьеров</strong>
+              <span>квартиры, дома, пентхаусы</span>
+            </li>
+            <li>
+              <strong>с полным сопровождением</strong>
+              <span>от планировки до комплектации</span>
+            </li>
+          </ul>
         </div>
-        <div className={styles.frame}>
-          <div className={styles.frameInner}>
-            <div className={styles.mainScene}>
-              <div className={styles.scenePanel} />
-              <div className={styles.sceneBlockLarge} />
-              <div className={styles.sceneBlockMedium} />
-              <div className={styles.sceneBlockSmall} />
+
+        <div className={styles.visual}>
+          <div className={styles.visualCard}>
+            <img src={featuredProject.image} alt={featuredProject.title} className={styles.image} />
+            <div className={styles.orangeCard}>
+              <span>Проект месяца</span>
+              <strong>{featuredProject.title}</strong>
+              <p>{featuredProject.location}</p>
             </div>
-            <div className={styles.floatingCard}>
-              <span>Палитра проекта</span>
-              <strong>Теплый камень / дуб / матовая латунь</strong>
-              <p>
-                Так обычно рождается настроение интерьера: сначала логика
-                пространства, потом свет, фактура и точные акценты.
-              </p>
+          </div>
+          <div className={styles.visualFooter}>
+            <div className={styles.metaCard}>
+              <span>Площадь</span>
+              <strong>{featuredProject.area}</strong>
+            </div>
+            <div className={styles.metaCard}>
+              <span>Формат</span>
+              <strong>{featuredProject.format}</strong>
+            </div>
+            <div className={styles.metaCard}>
+              <span>Подход</span>
+              <strong>Планировка, свет, материалы</strong>
             </div>
           </div>
         </div>
