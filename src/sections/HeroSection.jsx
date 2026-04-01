@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
+import heroImage from "../assets/hero_img.webp";
 import { projects } from "../assets/siteContent";
 import styles from "./HeroSection.module.css";
 
@@ -30,14 +31,6 @@ function HeroSection() {
           { y: 0, opacity: 1, duration: 0.8, stagger: 0.08 },
           "-=0.35"
         );
-
-      gsap.to(`.${styles.visualCard}`, {
-        y: -5,
-        duration: 6,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut"
-      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -88,7 +81,7 @@ function HeroSection() {
 
         <div className={styles.visual}>
           <div className={styles.visualCard}>
-            <img src={featuredProject.image} alt={featuredProject.title} className={styles.image} />
+            <img src={heroImage} alt="Интерьерный проект VELORA" className={styles.image} />
             <div className={styles.orangeCard}>
               <span>Проект месяца</span>
               <strong>{featuredProject.title}</strong>

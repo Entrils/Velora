@@ -52,9 +52,9 @@ npm run dev
 
 Файлы лежат в `src/assets/reviews/`.
 Сейчас проект использует:
-- `review1.png`
-- `review2.png`
-- `review3.png`
+- `review1.webp`
+- `review2.webp`
+- `review3.webp`
 
 Подключение изображений идёт через `src/assets/siteContent.js`.
 

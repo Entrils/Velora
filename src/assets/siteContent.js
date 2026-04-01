@@ -1,10 +1,10 @@
-import projectAurora from "./projects/project-aurora.svg";
-import projectFrame from "./projects/project-frame.svg";
-import projectMonolith from "./projects/project-monolith.svg";
-import projectVista from "./projects/project-vista.svg";
-import review1 from "./reviews/review1.png";
-import review2 from "./reviews/review2.png";
-import review3 from "./reviews/review3.png";
+import project1 from "./projects/project1.webp";
+import project4 from "./projects/project4.webp";
+import project2 from "./projects/project2.webp";
+import project3 from "./projects/project3.webp";
+import review1 from "./reviews/review1.webp";
+import review2 from "./reviews/review2.webp";
+import review3 from "./reviews/review3.webp";
 
 export const stats = [
   { label: "лет частной практики", value: 12, suffix: "+" },
@@ -22,7 +22,7 @@ export const projects = [
     timeline: "8 месяцев",
     description:
       "Интерьер для семьи с двумя детьми: спокойная палитра, длинные линии света, отдельный тихий блок спален и общая зона, в которой удобно собираться каждый день.",
-    image: projectAurora
+    image: project1
   },
   {
     id: "monolith",
@@ -33,7 +33,7 @@ export const projects = [
     timeline: "10 месяцев",
     description:
       "Здесь всё держится на контрасте фактур: тёмный камень, тёплое дерево и мягкий рассеянный свет. Пространство получилось строгим, но не холодным.",
-    image: projectMonolith
+    image: project2
   },
   {
     id: "vista",
@@ -44,7 +44,7 @@ export const projects = [
     timeline: "9 месяцев",
     description:
       "Светлый интерьер с большими окнами, плавными формами и материалами, которые не спорят с видом. Главная задача здесь — не перекрыть воздух и горизонт.",
-    image: projectVista
+    image: project3
   },
   {
     id: "frame",
@@ -55,7 +55,7 @@ export const projects = [
     timeline: "6 месяцев",
     description:
       "Компактный городской интерьер, где каждый метр работает: встроенное хранение, выразительные вертикали, спокойная спальня и гибкая гостиная для повседневной жизни.",
-    image: projectFrame
+    image: project4
   }
 ];
 

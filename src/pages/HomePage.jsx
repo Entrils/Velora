@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import CustomCursor from "../components/CustomCursor";
 import ProjectModal from "../components/ProjectModal";
 import StudioHeader from "../components/StudioHeader";
 import AboutSection from "../sections/AboutSection";
@@ -21,7 +20,6 @@ function HomePage({ theme, onToggleTheme }) {
 
   return (
     <>
-      <CustomCursor />
       <StudioHeader theme={theme} onToggleTheme={onToggleTheme} />
       <main>
         <HeroSection />
